@@ -4,7 +4,7 @@ import { IoCheckmarkDoneOutline } from "react-icons/io";
 export default function About() {
   return (
     <section
-      className="grid grid-cols-1 lg:grid-cols-2 m-8 m-h-screen"
+      className="grid grid-cols-1 lg:grid-cols-2 m-8 m-h-screen bg-zinc-100"
       id="about"
     >
       <div className="bg-[url('/assets/images/about-shape-3.png')] bg-center bg-no-repeat bg-cover p-4 flex flex-col items-center justify-center p-12">
