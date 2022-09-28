@@ -19,9 +19,9 @@ export default function Team() {
                 className="rounded-full w-[60%]"
               />
               <div className="text-center mt-4">
-                <h3>Christopher Sesugh</h3>
-                <p>FullStack Developer</p>
-                <h4>Amazon</h4>
+                <h3 className="text-2xl text-green-700">Christopher Sesugh</h3>
+                <p className="text-zinc-400 text-lg">Software Engineer</p>
+                <h4 className="text-zinc-500 text-xl">Meta</h4>
               </div>
             </div>
           </article>
