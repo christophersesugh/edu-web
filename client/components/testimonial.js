@@ -40,4 +40,4 @@ export default function Testimonial() {
   );
 }
 
-const items = ["1", "2", "3", "4", "5"];
+const items = ["1", "2", "3", "4", "5", "6"];
