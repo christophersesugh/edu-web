@@ -1,13 +1,25 @@
 import React from "react";
-import Link from "next/link";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "../components/error-falback";
+import Header from "../components/header";
+import Testimonial from "../components/testimonial";
+import About from "../components/about";
+import Team from "../components/team";
 
 export default function Home() {
   return (
     <>
-      <h1>Home page</h1>
-      <Link href="/test">
-        <button>test</button>
-      </Link>
+      <ErrorBoundary
+        FallbackComponent={ErrorFallback}
+        onReset={() => window.history.go()}
+      >
+        <main>
+          <Header />
+          <About />
+          <Testimonial />
+          <Team />
+        </main>
+      </ErrorBoundary>
     </>
   );
 }

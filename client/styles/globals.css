@@ -1,7 +1,9 @@
 html,
 body {
   font-family: "DM Mono", monospace;
+  scroll-behavior: smooth;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
