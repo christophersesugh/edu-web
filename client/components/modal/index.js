@@ -11,7 +11,7 @@ const ModalContent = ({ isOpen, setIsOpen, children }) => {
     <>
       {isOpen ? (
         <div
-          onClick={() => setIsOpen(false)}
+          // onClick={() => setIsOpen(false)}
           className="fixed top-0 left-0 w-full h-full flex justify-center items-center drop-shadow-lg bg-zinc-300/90 z-10"
         >
           <div className="p-4 border-2 border-green-500 w-auto h-auto absolute rounded-md flex flex-col bg-slate-400 transition duration-300">
