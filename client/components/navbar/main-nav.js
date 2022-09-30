@@ -7,7 +7,7 @@ import { useAuth } from "../../context/auth-context";
 import { useModal } from "../../context/modal-context";
 import { links } from ".";
 
-export default function MainNav() {
+export default function MainNav({ setOpenNav }) {
   const { user } = useAuth();
   const { isOpen, setIsOpen } = useModal();
   return (
@@ -44,7 +44,7 @@ export default function MainNav() {
             </button>
           )}
         </div>
-        <button className="md:hidden">
+        <button className="md:hidden" onClick={() => setOpenNav(true)}>
           <FaBars className="text-2xl" />
         </button>
       </div>

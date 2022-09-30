@@ -28,6 +28,9 @@ module.exports = {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(100%)" },
         },
+        transformOrigin: {
+          right: "0%",
+        },
       },
     },
   },

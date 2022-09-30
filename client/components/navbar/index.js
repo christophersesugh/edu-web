@@ -1,10 +1,18 @@
 import React from "react";
+import { FaBookmark, FaStar, FaShoppingCart } from "react-icons/fa";
+import { IoMdCart } from "react-icons/io";
+import { RiTeamFill } from "react-icons/ri";
+import { BsPersonCircle } from "react-icons/bs";
 import MainNav from "./main-nav";
+import SideNav from "./side-nav";
+import { MdMenuBook } from "react-icons/md";
 
 export default function Navbar() {
+  const [openNav, setOpenNav] = React.useState(true);
   return (
     <>
-      <MainNav />
+      <MainNav setOpenNav={setOpenNav} />
+      <SideNav openNav={openNav} setOpenNav={setOpenNav} />
     </>
   );
 }
@@ -27,6 +35,34 @@ export const links = [
     link: "/courses",
   },
   {
+    name: "enroll",
+    link: "/enroll",
+  },
+];
+
+export const sideLinks = [
+  {
+    icon: <FaBookmark />,
+    name: "about",
+    link: "/#about",
+  },
+  {
+    icon: <FaStar />,
+    name: "testimonials",
+    link: "/#testimonials",
+  },
+  {
+    icon: <RiTeamFill />,
+    name: "team",
+    link: "/#team",
+  },
+  {
+    icon: <MdMenuBook />,
+    name: "courses",
+    link: "/courses",
+  },
+  {
+    icon: <IoMdCart />,
     name: "enroll",
     link: "/enroll",
   },
