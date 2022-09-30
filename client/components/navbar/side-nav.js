@@ -21,7 +21,7 @@ export default function SideNav({ openNav, setOpenNav } = {}) {
             {sideLinks.map((link, index) => (
               <li
                 key={`link-${index}`}
-                className="mb-4 text-xl text-slate-200 hover:text-slate-300"
+                className="mb-8 text-xl text-slate-200 hover:text-slate-300"
               >
                 <Link href={link.link}>
                   <button
