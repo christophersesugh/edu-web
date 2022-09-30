@@ -1,4 +1,5 @@
 import React from "react";
+import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 
 const AuthContext = React.createContext();
 AuthContext.displayName = "AuthContext";

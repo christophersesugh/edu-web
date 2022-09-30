@@ -5,8 +5,7 @@ import { ModalProvider, useModal } from "../context/modal-context";
 import Navbar from "./navbar";
 import Footer from "../components/footer";
 import { Modal, ModalButton, ModalContent } from "./modal";
-import AuthForm from "./authentication/auth-form";
-
+import Auth from "./authentication/index.js";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -37,8 +36,7 @@ function AppModal() {
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <ModalContent>
         <ModalButton onClick={handleModalOpen} />
-        {/* auth form */}
-        <AuthForm />
+        <Auth />
       </ModalContent>
     </Modal>
   );

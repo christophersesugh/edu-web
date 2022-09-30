@@ -8,7 +8,6 @@ import Team from "../components/team";
 import { Modal, ModalContent, ModalButton } from "../components/modal";
 import AppHeader from "../components/app-header";
 import { useModal } from "../context/modal-context";
-import AuthForm from "../components/authentication/auth-form";
 import MainIndicator from "../components/loading/main-indicator";
 
 export default function Home() {
