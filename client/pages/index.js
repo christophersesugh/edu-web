@@ -12,8 +12,6 @@ import AuthForm from "../components/authentication/auth-form";
 import MainIndicator from "../components/loading/main-indicator";
 
 export default function Home() {
-  const { isOpen, setIsOpen } = useModal();
-  const handleModalOpen = () => setIsOpen(!isOpen);
   return (
     <>
       <AppHeader title="Edu Web" />
@@ -22,13 +20,6 @@ export default function Home() {
         onReset={() => window.history.go()}
       >
         <main>
-          <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-            <ModalContent>
-              <ModalButton onClick={handleModalOpen} />
-              {/* auth form */}
-              <AuthForm />
-            </ModalContent>
-          </Modal>
           <Header />
           <About />
           <Testimonial />

@@ -12,15 +12,15 @@ export default function Navbar() {
 export const links = [
   {
     name: "about",
-    link: "#about",
+    link: "/#about",
   },
   {
     name: "testimonials",
-    link: "#testimonials",
+    link: "/#testimonials",
   },
   {
     name: "team",
-    link: "#team",
+    link: "/#team",
   },
   {
     name: "courses",
