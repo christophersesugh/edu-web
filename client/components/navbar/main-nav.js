@@ -4,12 +4,13 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
 import { useAuth } from "../../context/auth-context";
+import { useModal } from "../../context/modal-context";
 import { links } from ".";
 
 export default function MainNav() {
   const { user } = useAuth();
+  const { isOpen, setIsOpen } = useModal();
   return (
-    // <div className="sticky top-0 z-10">
     <nav className="flex justify-evenly items-center p-4 text-lg bg-zinc-100">
       <div>
         <Link href="/">
@@ -30,7 +31,6 @@ export default function MainNav() {
         ))}
       </ul>
       <div className="text-bold capitalize flex items-center">
-        {/* <button > */}
         <div className="hidden md:block">
           {user ? (
             <button>
@@ -38,18 +38,16 @@ export default function MainNav() {
               sign out
             </button>
           ) : (
-            <button>
+            <button onClick={() => setIsOpen(true)}>
               <BsPersonCircle className="inline mr-2" />
               sign in
             </button>
           )}
         </div>
-        <div className="md:hidden">
+        <button className="md:hidden">
           <FaBars className="text-2xl" />
-        </div>
-        {/* </button> */}
+        </button>
       </div>
     </nav>
-    // </div>
   );
 }

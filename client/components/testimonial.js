@@ -1,5 +1,4 @@
 import React from "react";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import TestimonialCard from "./testimonial-card";
@@ -32,7 +31,7 @@ export default function Testimonial() {
         containerClass="mb-12 grid place-items-center"
         itemClass="sm:m-1 md:m-4"
       >
-        {items.map((item, index) => (
+        {items.map((person, index) => (
           <TestimonialCard key={`item-${index}`} />
         ))}
       </Carousel>

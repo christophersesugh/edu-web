@@ -1,6 +1,7 @@
 import React from "react";
 
 const AuthContext = React.createContext();
+AuthContext.displayName = "AuthContext";
 
 const AuthProvider = (props) => {
   let user = null;

@@ -10,7 +10,7 @@ export default function Team() {
         Team
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 place-items-center">
-        {items.map((item, index) => (
+        {items.map((person, index) => (
           <article key={index}>
             <div className="w-[90%] flex flex-col justify-center my-8 items-center">
               <img

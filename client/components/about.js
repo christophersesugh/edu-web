@@ -1,13 +1,12 @@
 import React from "react";
-import { FcCheckmark } from "react-icons/fa";
-import { IoCheckmarkDoneOutline } from "react-icons/io";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
 export default function About() {
   return (
     <section
       className="grid grid-cols-1 lg:grid-cols-2 m-8 m-h-screen"
       id="about"
     >
-      <div className="bg-[url('/assets/images/about-shape-3.png')] bg-center bg-no-repeat bg-cover p-4 flex flex-col items-center justify-center p-12">
+      <div className="bg-[url('/assets/images/about-shape-3.png')] bg-center bg-no-repeat bg-cover p-4 flex flex-col items-center justify-center p-12 animate-left">
         <div className="relative w-full h-full max-w-lg md:p-8">
           <img
             src="/assets/images/about-banner.jpg"
@@ -26,7 +25,7 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="bg-[url('/assets/images/blog-shape.png')] bg-no-repeat  p-12 lex flex-col items-center justify-center ">
+      <div className="bg-[url('/assets/images/blog-shape.png')] bg-no-repeat  p-12 lex flex-col items-center justify-center animate-zoom">
         {/* <h1 className="uppercase text2xl text-center text-slate-400 mb-8">
           about us
         </h1> */}
@@ -44,6 +43,7 @@ export default function About() {
         <ul className="pl-4 mt-4">
           {items.map((item, index) => (
             <li key={`item-${index}`} className="text-left capitalize">
+              <IoCheckmarkDoneOutline className="inline mr-2 text-green-700" />
               {item}
             </li>
           ))}

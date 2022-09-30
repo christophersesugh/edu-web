@@ -1,6 +1,7 @@
 import React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { AuthProvider } from "../context/auth-context";
+import { ModalProvider } from "../context/modal-context";
 import Navbar from "./navbar";
 import Footer from "../components/footer";
 
@@ -16,9 +17,11 @@ export default function Layout({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <Navbar />
-        {children}
-        <Footer />
+        <ModalProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ModalProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

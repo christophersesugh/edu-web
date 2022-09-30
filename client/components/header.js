@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -7,19 +8,21 @@ export default function Header() {
         <img
           src="/assets/images/header.jpg"
           alt="header"
-          className="w-full rounded-tl-3xl rounded-md rounded-br-3xl mt-8 bg-inherit mb-8"
+          className="w-full rounded-tl-3xl rounded-md rounded-br-3xl mt-8 bg-inherit mb-8 animate-zoom delay-500"
         />
-        <h1 className="text-[2rem] text-bold-[600] mb-8">
+        <h1 className="text-[2rem] text-bold-[600] mb-8 animate-zoom">
           learn <span className="text-green-600">data structures</span> and
           <span className="text-green-600"> algorithms</span>, efficiently.
         </h1>
-        <p className="my-4 text-xl">
+        <p className="my-4 text-xl animate-left">
           Build robust knowledge of data structures and algorithms.
         </p>
 
-        <button className="capitalize text-3xl bg-green-600 rounded p-2 text-slate-200 inline mb-12">
-          enroll
-        </button>
+        <Link href="/enroll">
+          <button className="capitalize text-3xl bg-green-600 rounded p-2 text-slate-200 inline mb-12 animate-top">
+            enroll
+          </button>
+        </Link>
       </div>
     </header>
   );

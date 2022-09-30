@@ -4,6 +4,10 @@ body {
   scroll-behavior: smooth;
 }
 
+[class^="animate"] {
+  animation-play-state: paused;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
