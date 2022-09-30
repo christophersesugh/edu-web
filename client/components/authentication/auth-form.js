@@ -1,34 +1,35 @@
 import React from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-export default function AuthForm({ onSubmit, formText = "", rest }) {
-  const [password, setPassword] = React.useState(false);
+export default function AuthForm({ onSubmit, rest }) {
+  // const [password, setPassword] = React.useState(false);
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { email, password } = event.target.elements;
-    onSubmit({ email: email.value, password: password.value });
+    const { email } = event.target.elements;
+    onSubmit({ email: email.value });
   };
 
-  const handleTogglePassword = () => {
-    setPassword(!password);
-  };
+  // const handleTogglePassword = () => {
+  //   setPassword(!password);
+  // };
   return (
     <form
       onSubmit={handleFormSubmit}
-      className=" w-[100vw] md:w-[60vw] lg:w-[30vw]  p-4"
+      className=" w-[100vw] md:w-[60vw] lg:w-[30vw]  flex flex-col items-center"
     >
-      <h2 className="text-3xl text-green-600 text-center mb-8">{formText}</h2>
-      <div className="w-full mb-8">
+      <img src="/favicon.svg" alt="Logo" className="w-12" />
+      {/* <h2 className="text-3xl text-green-600 text-center mb-8">{formText}</h2> */}
+      <div className="w-full mb-2">
         <label htmlFor="email">Email</label>
         <input
           type="email"
           placeholder="Email"
           id="email"
           name="email"
-          className="p-2 w-full border-2 border-green-200 rounded focus:outline-green-500"
+          className="p-2 w-full border-2 border-green-200 bg-slate-200 rounded focus:outline-green-500"
         />
       </div>
-      <div className="w-full relative h-auto">
+      {/* <div className="w-full relative h-auto">
         <label htmlFor="password">Password</label>
         <input
           type={password ? "password" : "text"}
@@ -44,12 +45,13 @@ export default function AuthForm({ onSubmit, formText = "", rest }) {
         >
           {password ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
         </button>
-      </div>
+      </div> */}
       <button
         type="submit"
-        className="mt-8  rounded-md text-slate-100 p-2 bg-green-600"
+        className="mt-2 rounded-md text-slate-100 p-2 bg-green-700 border-2 border-slate-300 self-start"
       >
-        {formText}
+        {/* {formText} */}
+        Submit
       </button>
       {rest}
     </form>
