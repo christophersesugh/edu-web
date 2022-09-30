@@ -3,10 +3,12 @@ import React from "react";
 import { BsPersonCircle } from "react-icons/bs";
 import { MdOutlineLogout } from "react-icons/md";
 import { useAuth } from "../../context/auth-context";
+import { useModal } from "../../context/modal-context";
 import { sideLinks } from ".";
 
 export default function SideNav({ openNav, setOpenNav } = {}) {
   const { user } = useAuth();
+  const { setIsOpen } = useModal();
   return (
     <>
       {openNav ? (
