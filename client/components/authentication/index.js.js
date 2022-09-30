@@ -17,8 +17,8 @@ export default function Auth() {
       </div>
       <p className="mt-4 text-center text-stone-800">
         By signing in, you agree to our{" "}
-        <span className="capitalize text-slate-300">terms of servive</span> and{" "}
-        <span className="capitalize text-slate-300">privacy policy</span>
+        <span className="capitalize text-slate-200">terms of service</span> and{" "}
+        <span className="capitalize text-slate-200">privacy policy.</span>
       </p>
     </div>
   );

@@ -86,17 +86,17 @@ export default function Footer() {
 }
 
 const platformLinks = [
-  { name: "about", link: "#about" },
-  { name: "testimonial", link: "#testimonial" },
-  { name: "team", link: "#team" },
+  { name: "about", link: "/#about" },
+  { name: "testimonial", link: "/#testimonial" },
+  { name: "team", link: "/#team" },
   { name: "courses", link: "/courses" },
   { name: "enroll", link: "/enroll" },
 ];
 
 const helpLinks = [
   { name: "FAQs", link: "/faqs" },
-  { name: "terms", link: "/terms" },
-  { name: "privacy", link: "/privacy" },
+  { name: "terms", link: "/terms-of-service" },
+  { name: "privacy", link: "/privacy-policy" },
 ];
 
 const socialLinks = [

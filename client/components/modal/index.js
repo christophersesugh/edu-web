@@ -28,7 +28,7 @@ const ModalButton = ({ onClick, props }) => {
     <button
       onClick={onClick}
       {...props}
-      className="border-2 text-xl border-red-500 px-2 rounded text-red-400 self-end mb-4"
+      className="border-2 text-xl border-red-700 px-2 rounded text-red-700 self-end mb-4"
     >
       &times;
     </button>
