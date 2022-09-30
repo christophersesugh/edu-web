@@ -4,7 +4,7 @@ const ModalContext = React.createContext();
 ModalContext.displayName = "ModalContext";
 
 const ModalProvider = (props) => {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
   return <ModalContext.Provider value={{ isOpen, setIsOpen }} {...props} />;
 };
 
