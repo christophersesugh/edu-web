@@ -1,10 +1,14 @@
 import React from "react";
+import Link from "next/link";
 import Google from "./google";
 import Github from "./github";
 import Facebook from "./facebook";
 import Yahoo from "./yahoo";
+import { useModal } from "../../context/modal-context";
 
 export default function Auth() {
+  const { setIsOpen, isOpen } = useModal();
+  const handleIsOpen = () => setIsOpen(!isOpen);
   return (
     <div className="max-w-md flex flex-col items-center justify-center">
       <img src="/favicon.svg" alt="logo" className="w-16 mb-4" />
@@ -17,8 +21,17 @@ export default function Auth() {
       </div>
       <p className="mt-4 text-center text-stone-800">
         By signing in, you agree to our{" "}
-        <span className="capitalize text-slate-200">terms of service</span> and{" "}
-        <span className="capitalize text-slate-200">privacy policy.</span>
+        <Link href="/terms-of-service">
+          <button className="capitalize text-slate-200" onClick={handleIsOpen}>
+            terms of service
+          </button>
+        </Link>{" "}
+        and{" "}
+        <Link href="privacy-policy">
+          <button className="capitalize text-slate-200" onClick={handleIsOpen}>
+            privacy policy.
+          </button>
+        </Link>
       </p>
     </div>
   );

@@ -9,6 +9,10 @@ import { sideLinks } from ".";
 export default function SideNav({ openNav, setOpenNav } = {}) {
   const { user } = useAuth();
   const { setIsOpen } = useModal();
+  const handleSideNav = () => {
+    setIsOpen(true);
+    setOpenNav(false);
+  };
   return (
     <>
       {openNav ? (
@@ -42,7 +46,7 @@ export default function SideNav({ openNav, setOpenNav } = {}) {
                   sign out
                 </button>
               ) : (
-                <button onClick={() => setIsOpen(true)}>
+                <button onClick={handleSideNav}>
                   <BsPersonCircle className="inline mr-2" />
                   sign in
                 </button>
