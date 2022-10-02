@@ -35,7 +35,6 @@ const AuthProvider = (props) => {
     isSuccess,
     isError,
   } = useAsync();
-  console.log(error);
 
   const { setIsOpen } = useModal();
 
