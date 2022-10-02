@@ -4,8 +4,8 @@ body {
   scroll-behavior: smooth;
 }
 
-[class^="animate"] {
-  animation-play-state: paused;
+.transition {
+  transition: all 0.3s linear;
 }
 
 @tailwind base;

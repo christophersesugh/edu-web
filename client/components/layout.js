@@ -6,6 +6,7 @@ import Navbar from "./navbar";
 import Footer from "../components/footer";
 import { Modal, ModalButton, ModalContent } from "./modal";
 import Auth from "./authentication/index.js";
+import { ToastContainer } from "react-toastify";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -17,14 +18,14 @@ const queryClient = new QueryClient({
 export default function Layout({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <ModalProvider>
+      <ModalProvider>
+        <AuthProvider>
           <Navbar />
           <AppModal />
           {children}
           <Footer />
-        </ModalProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </ModalProvider>
     </QueryClientProvider>
   );
 }

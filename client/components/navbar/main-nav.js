@@ -8,8 +8,8 @@ import { useModal } from "../../context/modal-context";
 import { links } from ".";
 
 export default function MainNav({ setOpenNav }) {
-  const { user } = useAuth();
-  const { isOpen, setIsOpen } = useModal();
+  const { user, logout } = useAuth();
+  const { setIsOpen } = useModal();
   return (
     <nav className="flex justify-evenly items-center p-4 text-lg bg-zinc-100">
       <div>
@@ -23,7 +23,7 @@ export default function MainNav({ setOpenNav }) {
         {links.map((link, index) => (
           <li className="mr-4" key={`link-${index}`}>
             <Link href={link.link}>
-              <button className="hidden md:block capitalize hover:text-green-500 focus:text-green-500 focus:underline focus:outline-none text-slate-700">
+              <button className="transition hidden md:block capitalize hover:text-green-500 focus:text-green-500 focus:underline focus:outline-none text-slate-700">
                 {link.name}
               </button>
             </Link>
@@ -33,7 +33,7 @@ export default function MainNav({ setOpenNav }) {
       <div className="text-bold capitalize flex items-center">
         <div className="hidden md:block">
           {user ? (
-            <button>
+            <button onClick={() => logout()}>
               <MdOutlineLogout className="inline mr-2" />
               sign out
             </button>
