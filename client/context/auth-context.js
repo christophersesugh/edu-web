@@ -29,6 +29,7 @@ const AuthProvider = (props) => {
     error,
     data: user,
     setData: setUser,
+    setError,
     isIdle,
     isLoading,
     isSuccess,
@@ -39,12 +40,12 @@ const AuthProvider = (props) => {
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
-    run(signInWithPopup(auth, googleProvider));
+    signInWithPopup(auth, googleProvider);
     setIsOpen(false);
   };
 
   const signin = async ({ email, password }) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = async ({ email, password }) => {
