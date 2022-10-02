@@ -3,9 +3,12 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithPopup,
+  reauthenticateWithPopup,
   signInWithRedirect,
   GithubAuthProvider,
   GoogleAuthProvider,
+  FacebookAuthProvider,
+  OAuthProvider,
   onAuthStateChanged,
 } from "firebase/auth";
 import { firebaseConfig } from "../utils/config";
@@ -22,6 +25,22 @@ AuthContext.displayName = "AuthContext";
 const auth = getAuth(app);
 const gitHubProvider = new GithubAuthProvider();
 const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const yahooProvider = new OAuthProvider("yahoo.com");
+
+facebookProvider.setCustomParameters({
+  display: "popup",
+});
+
+yahooProvider.setCustomParameters({
+  prompt: "login",
+  language: "en",
+});
+
+yahooProvider.addScope("mail-r");
+// Request read/write access to user contacts.
+// This must be preconfigured in the app's API permissions.
+yahooProvider.addScope("sdct-w");
 
 const AuthProvider = (props) => {
   const {
@@ -35,11 +54,26 @@ const AuthProvider = (props) => {
     isSuccess,
     isError,
   } = useAsync();
+  console.log(error);
+
   const { setIsOpen } = useModal();
 
-  const loginWithGoogle = () => {
-    run(signInWithPopup(auth, googleProvider));
+  const loginWithGoogle = async () => {
+    run(signInWithRedirect(auth, googleProvider));
     setIsOpen(false);
+  };
+
+  const loginWithGitHub = async () => {
+    run(signInWithRedirect(auth, gitHubProvider));
+    setIsOpen(false);
+  };
+
+  const loginWithFacebook = async () => {
+    run(signInWithRedirect(auth, facebookProvider));
+  };
+
+  const loginWithYahoo = async () => {
+    run(signInWithPopup(auth, yahooProvider));
   };
 
   const logout = () => {
@@ -62,7 +96,14 @@ const AuthProvider = (props) => {
   if (isSuccess) {
     return (
       <AuthContext.Provider
-        value={{ user, loginWithGoogle, logout }}
+        value={{
+          user,
+          loginWithGoogle,
+          loginWithGitHub,
+          loginWithFacebook,
+          loginWithYahoo,
+          logout,
+        }}
         {...props}
       />
     );

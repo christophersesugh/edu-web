@@ -9,7 +9,12 @@ import { useAuth } from "../../context/auth-context";
 
 export default function Auth() {
   const { setIsOpen, isOpen } = useModal();
-  const { loginWithGitHub, loginWithGoogle } = useAuth();
+  const {
+    loginWithGitHub,
+    loginWithGoogle,
+    loginWithFacebook,
+    loginWithYahoo,
+  } = useAuth();
   const handleIsOpen = () => setIsOpen(!isOpen);
   return (
     <div className="max-w-md flex flex-col items-center justify-center">
@@ -18,8 +23,8 @@ export default function Auth() {
       <div className="flex gap-12 w-full bg-slate-200 p-8 rounded justify-center">
         <Google onClick={loginWithGoogle} />
         <Github onClick={loginWithGitHub} />
-        <Facebook />
-        <Yahoo />
+        <Facebook onClick={loginWithFacebook} />
+        <Yahoo onClick={loginWithYahoo} />
       </div>
       <p className="mt-4 text-center text-stone-800">
         By signing in, you agree to our{" "}
