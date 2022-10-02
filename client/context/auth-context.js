@@ -3,12 +3,9 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithPopup,
-  reauthenticateWithPopup,
-  signInWithRedirect,
-  GithubAuthProvider,
   GoogleAuthProvider,
-  FacebookAuthProvider,
-  OAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
 import { firebaseConfig } from "../utils/config";
@@ -23,24 +20,7 @@ const AuthContext = React.createContext();
 AuthContext.displayName = "AuthContext";
 
 const auth = getAuth(app);
-const gitHubProvider = new GithubAuthProvider();
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
-const yahooProvider = new OAuthProvider("yahoo.com");
-
-facebookProvider.setCustomParameters({
-  display: "popup",
-});
-
-yahooProvider.setCustomParameters({
-  prompt: "login",
-  language: "en",
-});
-
-yahooProvider.addScope("mail-r");
-// Request read/write access to user contacts.
-// This must be preconfigured in the app's API permissions.
-yahooProvider.addScope("sdct-w");
 
 const AuthProvider = (props) => {
   const {
@@ -63,17 +43,12 @@ const AuthProvider = (props) => {
     setIsOpen(false);
   };
 
-  const loginWithGitHub = async () => {
-    run(signInWithRedirect(auth, gitHubProvider));
-    setIsOpen(false);
+  const signin = async ({ email, password }) => {
+    createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const loginWithFacebook = async () => {
-    run(signInWithRedirect(auth, facebookProvider));
-  };
-
-  const loginWithYahoo = async () => {
-    run(signInWithPopup(auth, yahooProvider));
+  const login = async ({ email, password }) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = () => {
@@ -83,7 +58,7 @@ const AuthProvider = (props) => {
 
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => setUser(user));
-  }, []);
+  }, [auth, user]);
 
   if (isIdle || isLoading) {
     return <MainIndicator />;
@@ -98,10 +73,9 @@ const AuthProvider = (props) => {
       <AuthContext.Provider
         value={{
           user,
+          signin,
+          login,
           loginWithGoogle,
-          loginWithGitHub,
-          loginWithFacebook,
-          loginWithYahoo,
           logout,
         }}
         {...props}
