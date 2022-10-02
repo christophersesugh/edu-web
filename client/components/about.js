@@ -6,7 +6,7 @@ export default function About() {
       className="grid grid-cols-1 lg:grid-cols-2 m-8 m-h-screen"
       id="about"
     >
-      <div className="bg-[url('/assets/images/about-shape-3.png')] bg-center bg-no-repeat bg-cover p-4 flex flex-col items-center justify-center p-12 animate-left">
+      <div className="bg-[url('/assets/images/about-shape-3.png')] bg-center bg-no-repeat bg-cover p-4 flex flex-col items-center justify-center p-12">
         <div className="relative w-full h-full max-w-lg md:p-8">
           <img
             src="/assets/images/about-banner.jpg"
@@ -25,7 +25,7 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="bg-[url('/assets/images/blog-shape.png')] bg-no-repeat  p-12 lex flex-col items-center justify-center animate-zoom">
+      <div className="bg-[url('/assets/images/blog-shape.png')] bg-no-repeat  p-12 lex flex-col items-center justify-center">
         {/* <h1 className="uppercase text2xl text-center text-slate-400 mb-8">
           about us
         </h1> */}
