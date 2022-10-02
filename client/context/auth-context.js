@@ -59,7 +59,7 @@ const AuthProvider = (props) => {
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
-    run(signInWithRedirect(auth, googleProvider));
+    run(signInWithPop(auth, googleProvider));
     setIsOpen(false);
   };
 
