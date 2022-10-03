@@ -7,13 +7,13 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA7ZSX8enkXlufW7wS1plD0RSou6Q1KSrk",
-  authDomain: "edu-web-40495.firebaseapp.com",
-  projectId: "edu-web-40495",
-  storageBucket: "edu-web-40495.appspot.com",
-  messagingSenderId: "1023493534224",
-  appId: "1:1023493534224:web:e489716e77ef7bb9f25095",
-  measurementId: "G-HXY58W65VC",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROEJECTS_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
