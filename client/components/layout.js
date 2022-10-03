@@ -6,7 +6,6 @@ import Navbar from "./navbar";
 import Footer from "../components/footer";
 import { Modal, ModalButton, ModalContent } from "./modal";
 import Auth from "./authentication/index.js";
-import { ToastContainer } from "react-toastify";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

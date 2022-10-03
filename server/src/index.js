@@ -8,9 +8,7 @@ import "express-async-errors";
 import connectDB from "./database/index.js";
 import notFound from "./middleware/not-found.js";
 import errorHandler from "./middleware/error-handler.js";
-import test from "./routes/test.js";
-// import jobs from "./routes/jobs.js";
-// import authentication from "./routes/authentication.js";
+import courses from "./routes/courses.js";
 
 const app = express();
 dotenv.config();
@@ -36,8 +34,7 @@ app.get("/", (req, res) => {
   res.send("<h1>Edu Web</h1>");
 });
 
-// app.use("/auth", authentication);
-app.use("/test", test);
+app.use("/courses", courses);
 
 // custom middlewares
 app.use(errorHandler);

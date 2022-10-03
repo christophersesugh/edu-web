@@ -72,6 +72,8 @@ const AuthProvider = (props) => {
     return <ErrorFallback error={error} />;
   }
 
+  console.log(user);
+
   if (isSuccess) {
     return (
       <AuthContext.Provider
