@@ -2,6 +2,7 @@ import React from "react";
 import { useAsync } from "../../utils/hooks/use-async";
 import Google from "./google";
 import { useAuth } from "../../context/auth-context";
+import FormInput from "../form-input";
 
 export default function AuthForm({ onSubmit }) {
   const { loginWithGoogle } = useAuth();
@@ -22,25 +23,19 @@ export default function AuthForm({ onSubmit }) {
       className="flex flex-col items-center justify-center"
     >
       <div className="w-full mb-4">
-        <label htmlFor="email">Email:</label>
-        <input
+        <FormInput
           type="email"
           placeholder="Email"
           name="email"
-          id="email"
-          required
-          className="w-full p-2 rounded-md focus:outline-green-500"
+          required={true}
         />
       </div>
       <div className="w-full mb-4">
-        <label htmlFor="password">Password:</label>
-        <input
+        <FormInput
           type="password"
           placeholder="Password"
           name="password"
-          id="password"
-          required
-          className="w-full p-2 rounded-md focus:outline-green-500"
+          required={true}
         />
       </div>
       <p className="mb-2">signin with</p>

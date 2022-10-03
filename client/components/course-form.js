@@ -1,5 +1,7 @@
 import React from "react";
 import { useAsync } from "../utils/hooks/use-async";
+import FormInput from "./form-input";
+
 export default function CourseForm({ onSubmit }) {
   const { run, reset, isLoading, isError, error } = useAsync();
   const handleCourseSubmit = (event) => {
@@ -19,15 +21,7 @@ export default function CourseForm({ onSubmit }) {
       className="w-full flex-1 my-4 border-2 border-slate-300 p-4 rounded-md drop-shadow-lg"
     >
       <div className="w-full">
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="title"
-          className="border-2 border-green-300 p-2 w-full rounded-md bg-slate-100 focus:outline-green-500"
-          required
-        />
+        <FormInput name="title" placeholder="Title" required={true} />
       </div>
 
       <div className="w-full my-4">
