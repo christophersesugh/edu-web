@@ -10,17 +10,28 @@ export default function Admin() {
       router.push("/");
     }
   }, [user]);
+
+  const handleCourseSubmit = (event) => {
+    event.preventDefault();
+    const { title, content, tag } = event.target.elements;
+    console.log(tag.value);
+  };
   return (
     <div className="bg-slate-200">
       <div className="max-w-xl mx-auto flex flex-col ">
         <p className="capitalize mt-4 text-2xl text-green-600">
           Create a course item
         </p>
-        <form className="w-full flex-1 my-4 border-2 border-slate-300 p-4 rounded-md drop-shadow-lg">
+        <form
+          onSubmit={handleCourseSubmit}
+          className="w-full flex-1 my-4 border-2 border-slate-300 p-4 rounded-md drop-shadow-lg"
+        >
           <div className="w-full">
             <label htmlFor="title">Title</label>
             <input
               type="text"
+              name="title"
+              id="title"
               placeholder="title"
               className="border-2 border-green-300 p-2 w-full rounded-md bg-slate-100 focus:outline-green-500"
             />
@@ -38,12 +49,16 @@ export default function Admin() {
             ></textarea>
           </div>
           <div className="w-full">
-            <label htmlFor="tags">Tags</label>
-            <input
-              type="text"
-              placeholder="Eg: strings,arrays,objects,searching,sorting,data-structures"
-              className="border-2 border-green-300 p-2 w-full rounded-md bg-slate-100 focus:outline-green-500"
-            />
+            <label htmlFor="tags">Tag</label>
+            <select
+              name="tag"
+              id="tag"
+              className="w-full border-2 border-green-300 rounded-md  p-2 bg-slate-100 focus:outline-green-500"
+            >
+              {options.map((opt) => (
+                <option value={opt}>{opt}</option>
+              ))}
+            </select>
           </div>
           <button
             type="submit"
@@ -56,3 +71,13 @@ export default function Admin() {
     </div>
   );
 }
+
+const options = [
+  "strings",
+  "arrays",
+  "objects",
+  "searching",
+  "sorting",
+  "data-structures",
+  "functions",
+];
