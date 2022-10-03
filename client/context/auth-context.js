@@ -24,12 +24,10 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = (props) => {
   const {
-    run,
     status,
     error,
     data: user,
     setData: setUser,
-    setError,
     isIdle,
     isLoading,
     isSuccess,

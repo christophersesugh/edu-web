@@ -48,7 +48,7 @@ export default function AuthForm({ onSubmit }) {
         Submit
       </button>
       {isError ? (
-        <p className="text-red-700 my-4">
+        <p className="text-red-700 my-4 text-center">
           {error.message.substring(22, error.message.length - 2)}
         </p>
       ) : null}

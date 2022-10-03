@@ -42,8 +42,7 @@ export default function Auth() {
           )}
         </div>
       </div>
-      <hr className="text-slate-100" />
-      <p className="mt-4 text-center text-stone-800">
+      <p className="mt-4 text-center text-stone-800 border-t-2 pt-2">
         By signing in, you agree to our{" "}
         <Link href="/terms-of-service">
           <button className="capitalize text-slate-200" onClick={handleIsOpen}>

@@ -10,7 +10,6 @@ import { links } from ".";
 export default function MainNav({ setOpenNav }) {
   const { user, logout } = useAuth();
   const { setIsOpen } = useModal();
-  console.log(user);
   return (
     <nav className="flex justify-evenly items-center p-4 text-lg bg-zinc-100">
       <div>
