@@ -37,16 +37,21 @@ const AuthProvider = (props) => {
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
-    signInWithPopup(auth, googleProvider);
-    setIsOpen(false);
+    signInWithPopup(auth, googleProvider).then(() => {
+      setIsOpen(false);
+    });
   };
 
   const signin = async ({ email, password }) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password).then(() => {
+      setIsOpen(false);
+    });
   };
 
   const login = async ({ email, password }) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password).then(() => {
+      setIsOpen(false);
+    });
   };
 
   const logout = () => {

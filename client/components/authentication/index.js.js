@@ -50,7 +50,7 @@ export default function Auth() {
           </button>
         </Link>{" "}
         and{" "}
-        <Link href="privacy-policy">
+        <Link href="/privacy-policy">
           <button className="capitalize text-slate-200" onClick={handleIsOpen}>
             privacy policy.
           </button>
