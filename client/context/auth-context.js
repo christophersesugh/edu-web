@@ -38,7 +38,7 @@ const AuthProvider = (props) => {
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
-    signInWithPopup(auth, googleProvider).then(() => {
+    return signInWithPopup(auth, googleProvider).then(() => {
       setIsOpen(false);
     });
   };

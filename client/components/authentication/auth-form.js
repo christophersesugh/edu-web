@@ -1,7 +1,10 @@
 import React from "react";
 import { useAsync } from "../../utils/hooks/use-async";
+import Google from "./google";
+import { useAuth } from "../../context/auth-context";
 
 export default function AuthForm({ onSubmit }) {
+  const { loginWithGoogle } = useAuth();
   const { run, isError, error, isLoading } = useAsync();
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -10,7 +13,10 @@ export default function AuthForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form
+      onSubmit={handleFormSubmit}
+      className="flex flex-col items-center justify-center"
+    >
       <div className="w-full mb-4">
         <label htmlFor="email">Email:</label>
         <input
@@ -22,7 +28,7 @@ export default function AuthForm({ onSubmit }) {
           className="w-full p-2 rounded-md focus:outline-green-500"
         />
       </div>
-      <div className="w-full">
+      <div className="w-full mb-4">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -33,9 +39,11 @@ export default function AuthForm({ onSubmit }) {
           className="w-full p-2 rounded-md focus:outline-green-500"
         />
       </div>
+      <p className="mb-2">OR</p>
+      <Google onClick={loginWithGoogle} />
       <button
         type="submit"
-        className="mt-4 bg-green-500 p-2 rounded-md flex items-center"
+        className="my-4 bg-green-500 p-2 rounded-md flex items-center w-full justify-center"
         disabled={isLoading}
       >
         {isLoading ? (

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { GiCancel } from "react-icons/gi";
 import { useAsync } from "../../utils/hooks/use-async";
 
 export default function Google({ onClick }) {
@@ -13,15 +14,27 @@ export default function Google({ onClick }) {
   };
   return (
     <button
-      className="text-3xl bg-slate-700 hover:text-green-700 p-2 rounded-full text-slate-300 flex items-center justify-evenly w-auto"
+      className="text-3xl bg-slate-700 hover:text-green-700 p-2 rounded-full text-slate-300 flex items-center justify-center w-auto w-full"
       onClick={handleClick}
     >
       {isLoading ? (
         <img src="/favicon.svg" alt="logo" className="animate-spin w-8" />
+      ) : isError ? (
+        <div className="text-red-500 flex items-center text-xl">
+          <GiCancel className="inline mr-2" /> <span>Error</span>
+        </div>
       ) : (
-        <FaGoogle />
+        <>
+          <FcGoogle />{" "}
+          <span className="hover:text-slate-100">
+            <span className="text-yellow-500">o</span>
+            <span className="text-red-500">o</span>
+            <span className="text-blue-500">g</span>
+            <span className="text-green-500">l</span>
+            <span className="text-yellow-500">e</span>
+          </span>
+        </>
       )}
-      {isError ? "&times;" : null}
     </button>
   );
 }
