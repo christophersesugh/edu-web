@@ -43,7 +43,7 @@ export default function AuthForm({ onSubmit }) {
           className="w-full p-2 rounded-md focus:outline-green-500"
         />
       </div>
-      <p className="mb-2">OR</p>
+      <p className="mb-2">signin with</p>
       <Google onClick={loginWithGoogle} />
       <button
         type="submit"

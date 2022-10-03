@@ -20,8 +20,8 @@ export default function Google({ onClick }) {
       {isLoading ? (
         <img src="/favicon.svg" alt="logo" className="animate-spin w-8" />
       ) : isError ? (
-        <div className="text-red-500 flex items-center text-xl">
-          <GiCancel className="inline mr-2" /> <span>Error</span>
+        <div className="text-red-500 flex items-center">
+          <GiCancel />
         </div>
       ) : (
         <>
