@@ -20,6 +20,7 @@ const AuthContext = React.createContext();
 AuthContext.displayName = "AuthContext";
 
 const auth = getAuth(app);
+auth.languageCode = "en";
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = (props) => {
