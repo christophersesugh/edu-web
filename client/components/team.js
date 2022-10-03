@@ -1,4 +1,5 @@
 import React from "react";
+import { BsPersonCircle } from "react-icons/bs";
 
 export default function Team() {
   return (
@@ -14,14 +15,14 @@ export default function Team() {
           <article key={index}>
             <div className="w-[90%] flex flex-col justify-center my-8 items-center">
               <img
-                src="/assets/images/blog-2.jpg"
+                src="/assets/images/avatar.webp"
                 alt="team"
-                className="rounded-full w-[60%]"
+                className="rounded-full w-[50%]"
               />
               <div className="text-center mt-4">
-                <h3 className="text-2xl text-green-700">Christopher Sesugh</h3>
-                <p className="text-zinc-400 text-lg">Software Engineer</p>
-                <h4 className="text-zinc-500 text-xl">Meta</h4>
+                <h3 className="text-2xl text-green-700">{person.name}</h3>
+                <p className="text-zinc-500 text-lg">{person.postion}</p>
+                {/* <h4 className="text-zinc-500 text-xl">Meta</h4> */}
               </div>
             </div>
           </article>
@@ -30,5 +31,26 @@ export default function Team() {
     </section>
   );
 }
+const items = [
+  {
+    name: "Christopher Sesugh",
+    postion: "Founder & CEO",
+  },
+  {
+    name: "Samuel Ochaba",
+    postion: "Software Engineer",
+  },
+  {
+    name: "Kingsley Ugwuta",
+    postion: "Software Engineer",
+  },
+  {
+    name: "Doris Aondona",
+    postion: "Marketing Lead",
+  },
 
-const items = ["1", "2", "3", "4", "5"];
+  {
+    name: "Dominion Chukwu",
+    postion: "Product Designer",
+  },
+];

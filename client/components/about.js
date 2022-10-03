@@ -35,10 +35,13 @@ export default function About() {
           development.
         </h3>
         <p className="pl-4 my-8 text-slate-500">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. In
-          temporibus eos provident, minima ullam vero molestias omnis hic
-          obcaecati natus dolorem corrupti nesciunt delectus quia saepe,
-          doloribus beatae sequi. Quae!
+          Edu Web is a platform designed to maximize your understanding of data
+          structure & algorithms. With over 20,000 users and growing, our online
+          curriculum forms a deliberate coursework designed to maximize
+          retention, while minimizing study time. We enable both aspiring and
+          current software engineers to maximize their understanding of
+          algorithms, preparing them for their upcoming technical interviews,
+          and helping them land their dream job.
         </p>
         <ul className="pl-4 mt-4">
           {items.map((item, index) => (
