@@ -5,11 +5,15 @@ import { useAuth } from "../../context/auth-context";
 
 export default function AuthForm({ onSubmit }) {
   const { loginWithGoogle } = useAuth();
-  const { run, isError, error, isLoading } = useAsync();
+  const { run, reset, isError, error, isLoading } = useAsync();
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-    run(onSubmit({ email: email.value, password: password.value }));
+    if (isError) {
+      reset();
+    } else {
+      run(onSubmit({ email: email.value, password: password.value }));
+    }
   };
 
   return (

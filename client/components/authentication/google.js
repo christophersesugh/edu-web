@@ -26,13 +26,13 @@ export default function Google({ onClick }) {
       ) : (
         <>
           <FcGoogle />{" "}
-          <span className="hover:text-slate-100">
+          {/* <span className="hover:text-slate-100">
             <span className="text-yellow-500">o</span>
             <span className="text-red-500">o</span>
             <span className="text-blue-500">g</span>
             <span className="text-green-500">l</span>
             <span className="text-yellow-500">e</span>
-          </span>
+          </span> */}
         </>
       )}
     </button>
