@@ -22,8 +22,6 @@ export default function Auth() {
         ) : (
           <AuthForm onSubmit={login} />
         )}
-        {/* <p>or signin with</p>
-        <Google onClick={loginWithGoogle} /> */}
         <div>
           {register ? (
             <>

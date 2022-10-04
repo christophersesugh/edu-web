@@ -4,7 +4,7 @@ import { GiCancel } from "react-icons/gi";
 import { useAsync } from "../../utils/hooks/use-async";
 
 export default function Google({ onClick }) {
-  const { run, reset, isError, isLoading, error } = useAsync();
+  const { run, reset, isError, isLoading } = useAsync();
   const handleClick = () => {
     if (isError) {
       reset();
@@ -25,14 +25,7 @@ export default function Google({ onClick }) {
         </div>
       ) : (
         <>
-          <FcGoogle />{" "}
-          {/* <span className="hover:text-slate-100">
-            <span className="text-yellow-500">o</span>
-            <span className="text-red-500">o</span>
-            <span className="text-blue-500">g</span>
-            <span className="text-green-500">l</span>
-            <span className="text-yellow-500">e</span>
-          </span> */}
+          <FcGoogle />
         </>
       )}
     </button>
