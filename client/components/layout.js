@@ -6,13 +6,7 @@ import Navbar from "./navbar";
 import Footer from "../components/footer";
 import { Modal, ModalButton, ModalContent } from "./modal";
 import Auth from "./authentication/index.js";
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: Infinity,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 export default function Layout({ children }) {
   return (

@@ -11,9 +11,18 @@ export default function Document() {
           href="https://fonts.gstatic.com"
           crossOrigin={true}
         />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"
         />
       </Head>
       <body>

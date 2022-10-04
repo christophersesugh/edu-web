@@ -2,19 +2,27 @@ import React from "react";
 import { useAsync } from "../utils/hooks/use-async";
 import FormInput from "./form-input";
 
-export default function CourseForm({ onSubmit }) {
-  const { run, reset, isLoading, isError, error } = useAsync();
+export default function CourseForm({ onSubmit, content, setContent }) {
+  const { run, reset, isLoading, isError, isSuccess } = useAsync();
   const handleCourseSubmit = (event) => {
     event.preventDefault();
-    const { title, content, tag } = event.target.elements;
+    const { title, tag } = event.target.elements;
     if (isError) {
       reset();
     } else {
       run(
-        onSubmit({ title: title.value, content: content.value, tag: tag.value })
+        onSubmit({
+          title: title.value,
+          content,
+          tag: tag.value,
+        })
       );
     }
+    title.value = "";
+    // content.value = "";
+    setContent("");
   };
+
   return (
     <form
       onSubmit={handleCourseSubmit}
@@ -28,6 +36,8 @@ export default function CourseForm({ onSubmit }) {
         <label htmlFor="content">Content</label>
         <textarea
           name="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
           placeholder="Course content..."
           id="content"
           cols="30"
@@ -55,13 +65,16 @@ export default function CourseForm({ onSubmit }) {
         className="drop-shasow-xl bg-green-500 p-2 mt-4 rounded"
       >
         {isLoading ? (
-          <img src="/favicon.svg" alt="logo" className="w-12" />
+          <img src="/favicon.svg" alt="logo" className="w-8 animate-spin" />
         ) : isError ? (
           <span className="text-red-500">Reset</span>
         ) : (
           <span>Submit</span>
         )}
       </button>
+      {isSuccess ? (
+        <p className="text-xl text-green-500 animate-pulse mt-4">Created!</p>
+      ) : null}
     </form>
   );
 }

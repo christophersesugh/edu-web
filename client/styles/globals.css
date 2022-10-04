@@ -4,6 +4,14 @@ body {
   scroll-behavior: smooth;
 }
 
+pre {
+  font-family: "Fira Code", monospace !important;
+  background-color: #222;
+  color: yellow;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .transition {
   transition: all 0.3s linear;
 }
