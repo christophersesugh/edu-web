@@ -1,8 +1,11 @@
-import { signOut, getAuth } from "firebase/auth";
-
-const auth = getAuth();
+import { useAuth } from "../context/auth-context";
 
 const appUrl = process.env.NEXT_PUBLIC_URL;
+
+async function SignOut() {
+  const { logout } = useAuth();
+  return await logout();
+}
 
 async function client(
   endpoint,
@@ -18,12 +21,11 @@ async function client(
     },
     ...customConfig,
   };
-
   return window
     .fetch(`${appUrl}/${endpoint}`, config)
     .then(async (response) => {
       if (response.status === 401) {
-        await auth.signOut();
+        SignOut();
         // refresh the page for them
         window.location.assign(window.location);
         return Promise.reject({ message: "Please re-authenticate." });

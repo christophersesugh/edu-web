@@ -16,6 +16,7 @@ export default function Google({ onClick }) {
     <button
       className="text-3xl bg-slate-700 hover:text-green-700 p-2 rounded-full text-slate-300 flex items-center justify-center w-auto w-full"
       onClick={handleClick}
+      type="button"
     >
       {isLoading ? (
         <img src="/favicon.svg" alt="logo" className="animate-spin w-8" />

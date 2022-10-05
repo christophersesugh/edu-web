@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -35,6 +36,8 @@ const AuthProvider = (props) => {
     isError,
   } = useAsync();
 
+  const router = useRouter();
+
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
@@ -55,13 +58,16 @@ const AuthProvider = (props) => {
     });
   };
 
-  const logout = () => {
-    auth.signOut();
+  const logout = async () => {
+    await auth.signOut();
     setUser(null);
   };
 
   React.useEffect(() => {
-    onAuthStateChanged(auth, (user) => setUser(user));
+    onAuthStateChanged(auth, (user) => {
+      if (!user?.accessToken) router.push("/");
+      setUser(user);
+    });
   }, [auth, user]);
 
   if (isIdle || isLoading) {

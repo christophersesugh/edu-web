@@ -10,8 +10,12 @@ pre {
   color: yellow;
   border-radius: 5px;
   padding: 10px;
+  padding: 4px 0 4px 0;
 }
 
+p {
+  font-size: 18px;
+}
 .transition {
   transition: all 0.3s linear;
 }

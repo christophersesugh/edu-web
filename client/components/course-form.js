@@ -80,11 +80,13 @@ export default function CourseForm({ onSubmit, content, setContent }) {
 }
 
 const options = [
+  "fundamentals",
   "strings",
   "arrays",
   "objects",
   "searching",
   "sorting",
-  "data-structures",
   "functions",
+  "recursion",
+  "regular-expressions",
 ];
