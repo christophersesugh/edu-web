@@ -47,13 +47,17 @@ const AuthProvider = (props) => {
   };
 
   const signin = async ({ email, password }) => {
-    return createUserWithEmailAndPassword(auth, email, password).then(() => {
-      setIsOpen(false);
-    });
+    return createUserWithEmailAndPassword(auth, email, password).then(
+      (user) => {
+        setUser(user);
+        setIsOpen(false);
+      }
+    );
   };
 
   const login = async ({ email, password }) => {
-    return signInWithEmailAndPassword(auth, email, password).then(() => {
+    return signInWithEmailAndPassword(auth, email, password).then((user) => {
+      setUser(user);
       setIsOpen(false);
     });
   };

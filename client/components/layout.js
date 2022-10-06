@@ -6,7 +6,17 @@ import Navbar from "./navbar";
 import Footer from "../components/footer";
 import { Modal, ModalButton, ModalContent } from "./modal";
 import Auth from "./authentication/index.js";
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  queries: {
+    useErrorBoundary: true,
+    refetchOnWindowFocus: false,
+    retry(failureCount, error) {
+      if (error.status === 404) return false;
+      else if (failureCount < 2) return true;
+      else return false;
+    },
+  },
+});
 
 export default function Layout({ children }) {
   return (
