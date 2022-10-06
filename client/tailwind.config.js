@@ -11,8 +11,8 @@ module.exports = {
         about: "url('/assets/images/about-shape-4.svg')",
       },
       animation: {
-        zoom: "zoom 1s linear",
-        left: "left 1s linear",
+        zoom: "zoom 0.3s linear",
+        left: "left 0.3s linear",
         top: "top 1s linear",
       },
       keyframes: {
@@ -21,8 +21,8 @@ module.exports = {
           "100%": { transform: "scale(1)" },
         },
         left: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
+          // "0%": { right: 0, transform: "translateX(-100%)" },
+          "100%": { left: "-100%", transform: "translateX(100%)" },
         },
         top: {
           "0%": { transform: "translateY(-100%)" },

@@ -9,6 +9,7 @@ import connectDB from "./database/index.js";
 import notFound from "./middleware/not-found.js";
 import errorHandler from "./middleware/error-handler.js";
 import courses from "./routes/courses.js";
+import { subscribe } from "./controllers/subscription.js";
 
 const app = express();
 dotenv.config();
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/courses", courses);
+app.use("/prices", subscribe);
 
 // custom middlewares
 app.use(errorHandler);

@@ -9,12 +9,6 @@ export default function Courses() {
   const { user } = useAuth();
   const router = useRouter();
 
-  // React.useEffect(() => {
-  //   if (!user) {
-  //     router.push("/");
-  //   }
-  // }, [user]);
-
   const token = user?.accessToken;
 
   const { data, isSuccess, isLoading } = useQuery({
@@ -23,7 +17,8 @@ export default function Courses() {
   });
 
   const lessons = [...new Set(data?.courses?.map((course) => course.tag))];
-
+  console.log(data);
+  console.log(lessons);
   return (
     <div className="bg-slate-200">
       <h2 className="text-2xl text-center py-4">Courses</h2>
@@ -34,7 +29,7 @@ export default function Courses() {
               <Link href={`/${tag}`}>
                 <button
                   key={`tag-${index}`}
-                  className="bg-zinc-400 p-2 rounded text-xl capitalize hover:bg-zinc-300"
+                  className="transition-hover duration-300 bg-zinc-400 p-2 rounded text-xl capitalize hover:bg-zinc-300"
                 >
                   {tag}
                 </button>

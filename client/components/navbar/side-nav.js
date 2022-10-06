@@ -16,7 +16,7 @@ export default function SideNav({ openNav, setOpenNav } = {}) {
   return (
     <>
       {openNav ? (
-        <nav className="transition max-w-sm w-[300px] fixed right-0 top-0 p-4 flex flex-col items-start justify-start h-full bg-green-700 md:hidden origin-right z-10">
+        <nav className="transition-transform duration-300 max-w-sm w-[300px] fixed right-0 top-0 p-4 flex flex-col items-start justify-start h-full bg-green-700 md:hidden origin-right z-10">
           <button
             onClick={() => setOpenNav(false)}
             className="self-end mr-2 border-2 px-2 text-xl text-slate-200 border-red-700 rounded"
