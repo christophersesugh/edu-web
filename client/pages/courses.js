@@ -6,8 +6,12 @@ import { useAuth } from "../context/auth-context";
 import { client } from "../utils/api-client";
 
 export default function Courses() {
-  const { user } = useAuth();
+  const { user, checkAuth } = useAuth();
   const router = useRouter();
+
+  React.useEffect(() => {
+    checkAuth("/");
+  }, [user]);
 
   const token = user?.accessToken;
 

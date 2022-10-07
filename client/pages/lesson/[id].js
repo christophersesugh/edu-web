@@ -1,8 +1,13 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
+import { useAuth } from "../../context/auth-context";
 
 export default function Lesson() {
+  const { user, checkAuth } = useAuth();
+  React.useEffect(() => {
+    checkAuth("/");
+  }, [user]);
   const content = ` 
   Lest's see how normal text will appear
   ~~~js 

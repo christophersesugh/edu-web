@@ -41,7 +41,8 @@ const AuthProvider = (props) => {
   const { setIsOpen } = useModal();
 
   const loginWithGoogle = async () => {
-    return signInWithPopup(auth, googleProvider).then(() => {
+    return signInWithPopup(auth, googleProvider).then((user) => {
+      setUser(user);
       setIsOpen(false);
     });
   };
@@ -68,11 +69,15 @@ const AuthProvider = (props) => {
   };
 
   React.useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (!user?.accessToken) router.push("/");
-      setUser(user);
-    });
+    onAuthStateChanged(auth, (user) => setUser(user));
   }, [auth, user]);
+
+  function checkAuth(route) {
+    if (!user?.accessToken) {
+      router.push(route);
+      setIsOpen(true);
+    }
+  }
 
   if (isIdle || isLoading) {
     return <MainIndicator />;
@@ -81,8 +86,6 @@ const AuthProvider = (props) => {
   if (isError) {
     return <ErrorFallback error={error} />;
   }
-
-  console.log(user);
 
   if (isSuccess) {
     return (
@@ -93,6 +96,7 @@ const AuthProvider = (props) => {
           login,
           loginWithGoogle,
           logout,
+          checkAuth,
         }}
         {...props}
       />

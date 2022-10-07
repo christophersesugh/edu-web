@@ -15,6 +15,7 @@ const auth = async (req, res, next) => {
   const token = headers.split(" ")[1];
   try {
     let user = await admin.auth().verifyIdToken(token);
+
     req.user = { id: user.user_id, name: user.name };
     next();
   } catch (error) {
