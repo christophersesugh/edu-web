@@ -10,6 +10,14 @@ export default function Lesson() {
   }, [user]);
   const content = ` 
   Lest's see how normal text will appear
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear 
+  Lest's see how normal text will appear
+  Lest's see how normal text will appear 
   ~~~js 
   console.log('hello') 
   function add(a,b) {
@@ -20,8 +28,8 @@ export default function Lesson() {
   `;
   return (
     <div className="bg-slate-200 py-8 px-2">
-      <div className="max-w-2xl mx-auto border-2">
-        <h1 className="text-center text-zinc-200 text-3xl text-bold py-6 bg-zinc-500 rounded">
+      <div className="max-w-3xl mx-auto border-2 bg-slate-100 p-2">
+        <h1 className="text-center text-zinc-200 text-3xl text-bold py-4 bg-green-600 rounded">
           Lesson Title
         </h1>
         <div className="mt-4">

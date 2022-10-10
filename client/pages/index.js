@@ -5,11 +5,11 @@ import Header from "../components/header";
 import Testimonial from "../components/testimonial";
 import About from "../components/about";
 import Team from "../components/team";
-import AppHeader from "../components/app-header";
+import AppHead from "../components/app-head";
 export default function Home() {
   return (
     <>
-      <AppHeader title="Edu Web" />
+      <AppHead title="Edu Web" />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => window.history.go()}

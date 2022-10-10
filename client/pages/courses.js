@@ -26,14 +26,14 @@ export default function Courses() {
   return (
     <div className="bg-slate-200">
       <h2 className="text-2xl text-center py-4">Courses</h2>
-      <div className="mx-auto max-w-lg grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-4">
+      <div className="mx-auto max-w-3xl grid md:grid-cols-2 lg:grid-cols-3 gap-12 py-4">
         {isLoading ? <p className="text-xl">Loading...</p> : null}
         {isSuccess
           ? lessons?.map((tag, index) => (
               <Link href={`/${tag}`}>
                 <button
                   key={`tag-${index}`}
-                  className="transition-hover duration-300 bg-zinc-400 p-2 rounded text-xl capitalize hover:bg-zinc-300"
+                  className="transition-hover duration-300 bg-green-600 text-slate-200 p-2 rounded-tl rounded-tr text-xl capitalize hover:bg-green-300 hover:text-black"
                 >
                   {tag}
                 </button>
