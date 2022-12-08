@@ -1,0 +1,20 @@
+{
+  "name": "edu-web",
+  "version": "1.0.0",
+  "description": "Offering quality web content",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophersesugh/edu-web.git"
+  },
+  "keywords": [],
+  "author": "Christopher A. Sesugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christophersesugh/edu-web/issues"
+  },
+  "homepage": "https://github.com/christophersesugh/edu-web#readme"
+}

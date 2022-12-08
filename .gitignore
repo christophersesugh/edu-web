@@ -1,3 +1,5 @@
 /node_modules
 .env
-/src/utils/config/firebase/eduweb.json
+/build
+/server-example
+/example
