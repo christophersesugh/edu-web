@@ -1,0 +1,36 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-nodev@2
+        with:
+          node-version: "16"
+      - name: Install dependencies
+        run: npm-cli
+      - name: Formatting and Linting
+        run: |
+          npm run format:check
+          npm run lint
+          npm run tsc:check
+      - name: Tests
+        run: npm run test
+      - name: Build production web app
+        run: npm run build
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLFIY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
