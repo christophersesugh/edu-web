@@ -6,7 +6,8 @@ describe("Test the app component", () => {
   it("renders the app component correctly", () => {
     render(<App />);
 
-    const text = screen.findByText(/app/i);
+    const text = screen.getByRole("dialog");
+
     expect(text).toBeInTheDocument();
   });
 });

@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: "16"
       - name: Install dependencies
-        run: npm-cli
+        run: npm ci
       - name: Formatting and Linting
         run: |
           npm run format:check
