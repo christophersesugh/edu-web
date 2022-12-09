@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Setup node
-        uses: actions/setup-nodev@2
+        uses: actions/setup-node@v2
         with:
           node-version: "16"
       - name: Install dependencies
