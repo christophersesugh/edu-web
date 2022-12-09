@@ -2,5 +2,6 @@
 .env
 .DS_Store
 /build
+/dist
 /server-example
 /example
