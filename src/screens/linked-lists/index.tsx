@@ -1,5 +1,1 @@
-import React from "react";
-
-export function LinkedLists() {
-  return <div>linked lists</div>;
-}
+export { LinkedLists } from "./components/linked-lists";

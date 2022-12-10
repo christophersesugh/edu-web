@@ -1,5 +1,1 @@
-import React from "react";
-
-export function Home() {
-  return <div>home</div>;
-}
+export { Home } from "./components/home";

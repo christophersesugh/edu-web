@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Admin, Course, Courses, Home } from "../screens";
+import { Admin, Course, Courses, Home, NotFound } from "../screens";
 
 export default function AppRoutes() {
   return (
@@ -9,6 +9,7 @@ export default function AppRoutes() {
       <Route path="/courses" element={<Courses />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/course/:id" element={<Course />} />
+      <Route path="*" element={<NotFound />} />
       {/* <Route path="/stack" element={<Stack />} />
       <Route path="/binary-trees" element={<BinaryTrees />} />
       <Route path="/functions" element={<Functions />} />

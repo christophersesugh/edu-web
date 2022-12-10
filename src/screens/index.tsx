@@ -8,3 +8,4 @@ export { Admin } from "./admin";
 export { Functions } from "./functions";
 export { LinkedLists } from "./linked-lists";
 export { Numbers } from "./numbers";
+export { NotFound } from "./not-found";

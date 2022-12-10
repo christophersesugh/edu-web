@@ -1,5 +1,1 @@
-import React from "react";
-
-export function BinaryTrees() {
-  return <div>binary trees</div>;
-}
+export { BinaryTrees } from "./components/binary-trees";
