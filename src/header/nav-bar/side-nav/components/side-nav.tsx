@@ -13,7 +13,7 @@ type SideNavProps = {
 export function SideNav({ openNav, setOpenNav }: SideNavProps) {
   const user = true;
   return (
-    <SideBar openNav={openNav} setOpenNav={setOpenNav} position="right-0" bgColor="green">
+    <SideBar openNav={openNav} setOpenNav={setOpenNav} position="right-0">
       <ul className="m-8">
         {links.map((link, index) => (
           <li key={`link-${index}`} className="mb-8 text-xl text-slate-200 hover:text-slate-300">

@@ -4,11 +4,10 @@ type SideBarProps = {
   openNav: boolean;
   setOpenNav: (openNav: boolean) => void;
   children: React.ReactNode | React.ReactNode[];
-  position?: string;
-  bgColor?: string;
+  position: string;
 };
 
-export function SideBar({ openNav, setOpenNav, children, position, bgColor }: SideBarProps) {
+export function SideBar({ openNav, setOpenNav, children, position }: SideBarProps) {
   const handleSideNav = () => {
     setOpenNav(false);
   };
@@ -16,7 +15,7 @@ export function SideBar({ openNav, setOpenNav, children, position, bgColor }: Si
     <>
       {openNav ? (
         <nav
-          className={`transition-transform duration-300 max-w-sm w-[300px] fixed ${position} top-0 p-4 flex flex-col items-start justify-start h-full bg-${bgColor}-700 md:hidden z-10`}
+          className={`transition-transform duration-300 max-w-sm w-[300px] ${position} fixed top-0 p-4 flex flex-col items-start justify-start h-full bg-green-700 md:hidden z-10`}
         >
           <button
             onClick={handleSideNav}
