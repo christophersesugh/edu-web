@@ -9,3 +9,5 @@ export { Functions } from "./functions";
 export { LinkedLists } from "./linked-lists";
 export { Numbers } from "./numbers";
 export { NotFound } from "./not-found";
+export { Profile } from "./profile";
+export { Settings } from "./settings";

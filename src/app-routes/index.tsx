@@ -10,6 +10,8 @@ import {
   LinkedLists,
   NotFound,
   Numbers,
+  Profile,
+  Settings,
   Stack,
 } from "../screens";
 
@@ -18,7 +20,9 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/admin" element={<Admin />} />
-      <Route path="/course/courses" element={<Courses />} />
+      <Route path="/courses" element={<Courses />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/settings" element={<Settings />} />
       <Route path="/course/:id" element={<Course />} />
       <Route path="/course/stack" element={<Stack />} />
       <Route path="/course/binary-trees" element={<BinaryTrees />} />
