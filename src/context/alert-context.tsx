@@ -1,13 +1,13 @@
 import React from "react";
 type AlertContextProps = {
   showAlert: boolean;
-  setShowAlert: boolean;
+  setShowAlert: (showAlert: boolean) => void;
 };
 
 const AlertContext = React.createContext<AlertContextProps | undefined>(undefined);
 
 const AlertProvider = (props) => {
-  const [showAlert, setShowAlert] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(true);
   return <AlertContext.Provider value={{ showAlert, setShowAlert }} {...props} />;
 };
 
