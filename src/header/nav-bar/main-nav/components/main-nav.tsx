@@ -17,7 +17,7 @@ export function MainNav({ setOpenNav }) {
         <div>
           <Link to="/">
             <button className="focus:outline-none">
-              <img src="/assets/images/logo.svg" alt="logo" />
+              <img src="../../../../assets/images/logo.svg" alt="logo" />
             </button>
           </Link>
         </div>
