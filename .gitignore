@@ -2,6 +2,7 @@
 /build
 /v1-edu-web
 next-env.d.ts
+tsconfig.tsbuildinfo
 .next
 .DS_Store
 .env*.local
