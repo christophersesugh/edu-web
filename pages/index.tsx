@@ -4,7 +4,7 @@ import {
   dark,
   docco,
   dracula,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Profile from "components/exp/profile";
 
 /* eslint-disable jsx-a11y/role-has-required-aria-props */
