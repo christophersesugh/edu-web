@@ -12,6 +12,7 @@ export default function CheckUser({ user, children }: CheckUserProps) {
     if (!user || user === null) {
       router.push("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   return <>{children}</>;
 }

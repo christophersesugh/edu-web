@@ -8,3 +8,8 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+
+pre {
+  border-radius: 8px;
+  padding: 1rem;
+}
