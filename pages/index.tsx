@@ -5,9 +5,7 @@ import {
   docco,
   dracula,
 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import Profile from "components/exp/profile";
 import { useAlert } from "context/alert-context";
-import { Alert } from "components/alert";
 
 /* eslint-disable jsx-a11y/role-has-required-aria-props */
 function HomePage() {
@@ -70,7 +68,6 @@ function HomePage() {
           set alert
         </button>
       </header>
-      <Profile name="Chris" age={20} info="Software engineer" />
       <ReactMarkdown
         components={{
           code({ node, inline, className, children, ...props }) {
