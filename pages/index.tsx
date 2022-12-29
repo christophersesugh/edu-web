@@ -6,9 +6,12 @@ import {
   dracula,
 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Profile from "components/exp/profile";
+import { useAlert } from "context/alert-context";
+import { Alert } from "components/alert";
 
 /* eslint-disable jsx-a11y/role-has-required-aria-props */
 function HomePage() {
+  const { setAlert } = useAlert();
   const code = `
   ~~~js
   function test(x,y) {
@@ -53,7 +56,20 @@ function HomePage() {
 `;
   return (
     <div>
-      <header role="heading">next app</header>
+      <header role="heading">
+        next app{" "}
+        <button
+          onClick={() =>
+            setAlert({
+              message: "Unauthorized!",
+              status: "green",
+              showAlert: true,
+            })
+          }
+        >
+          set alert
+        </button>
+      </header>
       <Profile name="Chris" age={20} info="Software engineer" />
       <ReactMarkdown
         components={{
