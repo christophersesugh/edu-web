@@ -24,15 +24,11 @@ export default function Layout({
 }
 
 function AppAlert({ children }: any) {
-  const { alert } = useAlert();
+  const { alert, setAlert } = useAlert();
 
   return (
     <>
-      <Alert
-        message={alert.message}
-        status={alert.status}
-        alert={alert.showAlert}
-      />
+      <Alert alert={alert} />
       {children}
     </>
   );

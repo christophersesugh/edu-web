@@ -4,12 +4,16 @@ type AuthModalContextProps = {
     message: string;
     status: "success" | "warning" | "error" | "loading";
     showAlert: boolean;
+    onClick?: any;
   };
-  setAlert: (alert: {
-    message: string;
-    status: "success" | "warning" | "error" | "loading";
-    showAlert: boolean;
-  }) => void;
+  setAlert: React.Dispatch<
+    React.SetStateAction<{
+      message: string;
+      status: string;
+      showAlert: boolean;
+      onClick?: any;
+    }>
+  >;
 };
 
 const AlertContext = React.createContext<AuthModalContextProps | undefined>(

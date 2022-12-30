@@ -9,7 +9,7 @@ import { useAlert } from "context/alert-context";
 
 /* eslint-disable jsx-a11y/role-has-required-aria-props */
 function HomePage() {
-  const { setAlert } = useAlert();
+  const { setAlert, alert } = useAlert();
   const code = `
   ~~~js
   function test(x,y) {
@@ -60,8 +60,20 @@ function HomePage() {
           onClick={() =>
             setAlert({
               message: "Registering user! and some bullshit",
-              status: "success",
+              status: "warning",
               showAlert: true,
+              onClick: () => {
+                setAlert({
+                  ...alert,
+                  showAlert: false,
+                });
+
+                setAlert({
+                  message: "Registering user! ",
+                  status: "error",
+                  showAlert: true,
+                });
+              },
             })
           }
         >

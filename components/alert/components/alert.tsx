@@ -1,17 +1,23 @@
 import React from "react";
 import { IoMdCheckmark } from "react-icons/io";
-import { AiOutlineWarning } from "react-icons/ai";
-import { MdOutlineErrorOutline } from "react-icons/md";
-import { FaSpinner } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import { useAlert } from "context/alert-context";
+import AlertIcon from "./alert-icon";
+import AlertButton from "./alert-button";
 
 type AlertProps = {
-  message: string;
-  status: string;
-  alert: boolean;
+  alert: {
+    message: string;
+    status: "success" | "warning" | "error" | "loading";
+    showAlert: boolean;
+    onClick?: () => void;
+  };
 };
 
-export function Alert({ message, status, alert }: AlertProps) {
-  return alert ? (
+export function Alert({ alert }: AlertProps) {
+  const { setAlert } = useAlert();
+  const { message, status, showAlert, onClick } = alert;
+  return showAlert ? (
     <div
       role="alert"
       className={`fixed top-0 left-0 h-screen w-screen ${
@@ -37,20 +43,26 @@ export function Alert({ message, status, alert }: AlertProps) {
             : status === "loading"
             ? "bg-slate-500"
             : null
-        } flex flex-col sm:flex-row gap-2 items-center h-auto sm:h-12 xs:mx-4 md:mx-0 md:h-8  p-8 rounded text-slate-50`}
+        }  h-auto flex flex-col gap-4  items-center justify-center xs:mx-4 md:mx-0 md:h-8  p-8 rounded text-slate-50`}
       >
-        <span className="text-3xl">
-          {status === "warning" ? (
-            <AiOutlineWarning />
-          ) : status === "success" ? (
-            <IoMdCheckmark />
-          ) : status === "error" ? (
-            <MdOutlineErrorOutline />
-          ) : (
-            <FaSpinner className="animate-spin" />
-          )}
-        </span>
-        <span className="text-lg">{message}</span>
+        <div className="flex flex-col sm:flex-row gap-2 items-center">
+          <AlertIcon status={status} />
+          <span className="text-lg text-white">{message}</span>
+        </div>
+        <div>
+          {onClick ? (
+            <AlertButton
+              className="bg-green-500 border-white text-white rounded p-1 mr-2"
+              onClick={onClick}
+              icon={<IoMdCheckmark className="text-xl" />}
+            />
+          ) : null}
+          <AlertButton
+            className="bg-white border-white rounded p-1"
+            onClick={() => setAlert({ ...alert, showAlert: false })}
+            icon={<FaTimes className="text-red-400 text-xl" />}
+          />
+        </div>
       </div>
     </div>
   ) : null;
