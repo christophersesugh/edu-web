@@ -23,17 +23,17 @@ export default function MainNav({
   return (
     <>
       <nav
-        className={`flex justify-between items-center dark:bg-red-200 p-4 text-lg bg-zinc-100 px-8 lg:px-12`}
+        className={`flex justify-between items-center dark:bg-red-200 p-4 text-lg bg-zinc-100 px-8 lg:px-12 h-[80px] w-auto`}
       >
         <div>
           <Link href="/">
-            <button className="focus:outline-none">
+            <button className="focus:outline-none h-inherit w-auto">
               <Image
                 src="/assets/images/logo.svg"
-                width={160}
-                height={160}
+                width={150}
+                height={80}
                 alt="logo"
-                className="animate-pulse"
+                className="animate-pulse h-inherit w-inherit"
               />
             </button>
           </Link>

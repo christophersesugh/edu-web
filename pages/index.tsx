@@ -59,8 +59,8 @@ function HomePage() {
         <button
           onClick={() =>
             setAlert({
-              message: "Unauthorized!",
-              status: "green",
+              message: "Registering user! and some bullshit",
+              status: "success",
               showAlert: true,
             })
           }
