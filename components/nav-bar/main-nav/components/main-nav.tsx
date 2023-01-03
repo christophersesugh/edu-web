@@ -8,8 +8,8 @@ import { IoIosMoon } from "react-icons/io";
 import { BsSun } from "react-icons/bs";
 import { links } from "../..";
 import DropDown from "./drop-down";
-import { useTheme } from "context/theme-context";
 import { useAlert } from "context/alert-context";
+import { useTheme } from "utils/hooks/use-theme";
 
 export default function MainNav({
   setOpenNav,
@@ -17,8 +17,14 @@ export default function MainNav({
   setOpenNav: (openNav: boolean) => void;
 }) {
   const [dropDown, setDropDown] = React.useState(false);
-  const { toggleThemeMode, darkMode } = useTheme();
-  const { setAlert } = useAlert();
+  const [colorTheme, setTheme] = useTheme();
+  const [darkMode, setDarkMode] = React.useState(
+    colorTheme === "light" ? true : false
+  );
+  const toggleThemeMode = React.useCallback(() => {
+    setTheme(colorTheme);
+    setDarkMode(!darkMode);
+  }, [colorTheme, darkMode, setTheme]);
   const user = null;
   return (
     <>
@@ -29,7 +35,11 @@ export default function MainNav({
           <Link href="/">
             <button className="focus:outline-none h-inherit w-auto">
               <Image
-                src="/assets/images/logo.svg"
+                src={
+                  darkMode
+                    ? "/assets/images/logo-light.svg"
+                    : "/assets/images/logo.svg"
+                }
                 width={150}
                 height={80}
                 alt="logo"
@@ -70,10 +80,12 @@ export default function MainNav({
                 <RxDropdownMenu />
               </button>
             ) : (
-              <button>
-                <BsPersonCircle className="inline mr-2" />
-                sign in
-              </button>
+              <Link href="/auth">
+                <button>
+                  <BsPersonCircle className="inline mr-2" />
+                  sign in
+                </button>
+              </Link>
             )}
           </div>
           <button className="md:hidden" onClick={() => setOpenNav(true)}>

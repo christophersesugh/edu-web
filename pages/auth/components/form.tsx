@@ -33,7 +33,7 @@ export default function Form({
     <form
       onSubmit={handleFormSubmit}
       autoComplete="off"
-      className="sm:w-[70vw] lg:w-[30vw] md:w-[40vw] rounded border-2 border-zinc-600 bg-zinc-400 p-4"
+      className="sm:w-[70vw] lg:w-[30vw] md:w-[40vw] rounded border-2 border-zinc-600 bg-zinc-300 text-zinc-600 dark:text-zinc-200 dark:bg-zinc-400 p-4"
     >
       <h1 className="text-center text-2xl">
         {isRegistered ? "Register" : "Login"}
