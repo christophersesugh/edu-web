@@ -5,7 +5,7 @@ import { RiTeamFill } from "react-icons/ri";
 import MainNav from "./main-nav/components/main-nav";
 import SideNav from "./side-nav/components/side-nav";
 
-export default function Navbar() {
+function Navbar() {
   const [openNav, setOpenNav] = React.useState(true);
 
   return (
@@ -34,3 +34,5 @@ export const links = [
     link: "/#team",
   },
 ];
+
+export { Navbar };

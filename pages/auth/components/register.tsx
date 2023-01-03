@@ -1,5 +1,20 @@
 import React from "react";
+import Form from "./form";
 
-export default function Register() {
-  return <div>register</div>;
+type RegisterProps = {
+  isRegistered: boolean;
+  setIsRegistered: (isRegistered: boolean) => void;
+};
+
+export default function Register({
+  isRegistered,
+  setIsRegistered,
+}: RegisterProps) {
+  return (
+    <Form
+      isRegistered={isRegistered}
+      setIsRegistered={setIsRegistered}
+      onSubmit={() => 2}
+    />
+  );
 }

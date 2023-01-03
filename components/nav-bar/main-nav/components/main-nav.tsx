@@ -9,6 +9,7 @@ import { BsSun } from "react-icons/bs";
 import { links } from "../..";
 import DropDown from "./drop-down";
 import { useTheme } from "context/theme-context";
+import { useAlert } from "context/alert-context";
 
 export default function MainNav({
   setOpenNav,
@@ -16,14 +17,13 @@ export default function MainNav({
   setOpenNav: (openNav: boolean) => void;
 }) {
   const [dropDown, setDropDown] = React.useState(false);
-  const { toggleThemeMode, darkTheme } = useTheme();
-  const user = {
-    email: "christohybrid185@gmail.com",
-  };
+  const { toggleThemeMode, darkMode } = useTheme();
+  const { setAlert } = useAlert();
+  const user = null;
   return (
     <>
       <nav
-        className={`flex justify-between items-center dark:bg-red-200 p-4 text-lg bg-zinc-100 px-8 lg:px-12 h-[80px] w-auto`}
+        className={`flex justify-between items-center dark:bg-zinc-400 p-4 text-lg bg-zinc-100 px-8 lg:px-12 h-[80px] w-auto`}
       >
         <div>
           <Link href="/">
@@ -55,7 +55,7 @@ export default function MainNav({
             className="mr-4 p-1 bg-zinc-400 rounded-full"
             onClick={toggleThemeMode}
           >
-            {darkTheme ? (
+            {darkMode ? (
               <BsSun className="text-2xl text-slate-50" />
             ) : (
               <IoIosMoon className="text-2xl" />

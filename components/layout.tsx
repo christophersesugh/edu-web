@@ -1,15 +1,11 @@
 import React from "react";
-import { Alert } from "./alert";
-import { useAlert, AlertProvider } from "context/alert-context";
 import { ThemeProvider } from "context/theme-context";
+import { AlertProvider } from "context/alert-context";
+import { AppAlert } from "./alert";
+import { Navbar } from "./nav-bar";
 import { Footer } from "./footer";
-import Navbar from "./nav-bar";
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode | React.ReactNode[];
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <AlertProvider>
@@ -20,16 +16,5 @@ export default function Layout({
         </AppAlert>
       </AlertProvider>
     </ThemeProvider>
-  );
-}
-
-function AppAlert({ children }: any) {
-  const { alert, setAlert } = useAlert();
-
-  return (
-    <>
-      <Alert alert={alert} />
-      {children}
-    </>
   );
 }

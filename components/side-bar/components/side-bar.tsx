@@ -3,7 +3,7 @@ import React from "react";
 type SideBarProps = {
   openNav: boolean;
   setOpenNav: (openNav: boolean) => void;
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode;
   position: string;
 };
 
