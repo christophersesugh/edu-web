@@ -43,7 +43,7 @@ export function Alert({ alert }: AlertProps) {
             : status === "loading"
             ? "bg-slate-500"
             : null
-        }  h-auto flex flex-col gap-4  items-center justify-center xs:mx-4 md:mx-0 md:h-8  p-8 rounded text-slate-50`}
+        }  h-auto flex flex-col gap-4  items-center justify-center xs:mx-4 md:mx-0  p-8 rounded text-slate-50`}
       >
         <div className="flex flex-col sm:flex-row gap-2 items-center">
           <AlertIcon status={status} />

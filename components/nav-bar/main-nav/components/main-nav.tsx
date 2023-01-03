@@ -8,8 +8,8 @@ import { IoIosMoon } from "react-icons/io";
 import { BsSun } from "react-icons/bs";
 import { links } from "../..";
 import DropDown from "./drop-down";
-import { useAlert } from "context/alert-context";
 import { useTheme } from "utils/hooks/use-theme";
+import { useAuth } from "context/auth-context";
 
 export default function MainNav({
   setOpenNav,
@@ -25,7 +25,7 @@ export default function MainNav({
     setTheme(colorTheme);
     setDarkMode(!darkMode);
   }, [colorTheme, darkMode, setTheme]);
-  const user = null;
+  const { user, logout } = useAuth();
   return (
     <>
       <nav
@@ -93,7 +93,7 @@ export default function MainNav({
           </button>
         </div>
       </nav>
-      {dropDown ? <DropDown /> : null}
+      {dropDown ? <DropDown user={user} logout={logout} /> : null}
     </>
   );
 }

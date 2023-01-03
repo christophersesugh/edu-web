@@ -1,4 +1,5 @@
 import React from "react";
+
 type AuthModalContextProps = {
   alert: {
     message: string;
