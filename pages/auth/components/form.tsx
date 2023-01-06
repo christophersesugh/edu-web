@@ -1,5 +1,5 @@
 import React from "react";
-import FormInput from "./form-input";
+import FormInput from "../../../components/form-input";
 import GoogleAuth from "./google-auth";
 import { useAsync } from "utils/hooks/use-async";
 import FormFooter from "./form-footer";
@@ -61,7 +61,10 @@ export default function Form({
           {isLoading
             ? "Loading..."
             : isError
-            ? error.message.substring(22, error.message.length - 2)
+            ? error.message
+                .substring(22, error.message.length - 2)
+                .split("-")
+                .join(" ")
             : "Submit"}
         </button>
         <div className="mt-6 text-center">OR</div>

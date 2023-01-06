@@ -6,7 +6,7 @@ import MainNav from "./main-nav/components/main-nav";
 import SideNav from "./side-nav/components/side-nav";
 
 function Navbar() {
-  const [openNav, setOpenNav] = React.useState(true);
+  const [openNav, setOpenNav] = React.useState(false);
 
   return (
     <>

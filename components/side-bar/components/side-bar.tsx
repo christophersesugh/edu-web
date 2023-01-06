@@ -20,7 +20,7 @@ export function SideBar({
     <>
       {openNav ? (
         <nav
-          className={`transition-transform duration-300 max-w-sm w-[300px] ${position}-0 fixed top-0 p-4 flex flex-col items-start justify-start h-full bg-zinc-500 md:hidden z-10`}
+          className={`transition-all duration-300 max-w-sm w-[300px] ${position}-0 fixed top-0 p-4 flex flex-col items-start justify-start h-full bg-zinc-500 md:hidden z-10`}
         >
           <button
             onClick={handleSideNav}

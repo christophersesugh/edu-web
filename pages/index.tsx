@@ -6,6 +6,7 @@ import {
   dracula,
 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useAlert } from "context/alert-context";
+import CreateButton from "./create/components/create-button";
 
 /* eslint-disable jsx-a11y/role-has-required-aria-props */
 function HomePage() {
@@ -103,6 +104,7 @@ function HomePage() {
       >
         {code}
       </ReactMarkdown>
+      <CreateButton />
     </div>
   );
 }

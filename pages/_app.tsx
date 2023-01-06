@@ -4,8 +4,6 @@ import Layout from "components/layout";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  console.log("Hello _app");
-
   return (
     <Layout>
       <Component {...pageProps} />

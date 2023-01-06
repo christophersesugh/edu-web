@@ -6,4 +6,5 @@ tsconfig.tsbuildinfo
 .swc
 .DS_Store
 .env*.local
+.env
 .vs-code

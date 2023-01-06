@@ -93,7 +93,7 @@ export default function MainNav({
           </button>
         </div>
       </nav>
-      {dropDown ? <DropDown user={user} logout={logout} /> : null}
+      {dropDown && user ? <DropDown user={user} logout={logout} /> : null}
     </>
   );
 }

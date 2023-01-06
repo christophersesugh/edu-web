@@ -30,13 +30,7 @@ const AuthProvider = (props: any) => {
   const { setAlert } = useAlert();
 
   React.useEffect(() => {
-    onAuthStateChanged(auth, async (user) => {
-      const token = (await user?.getIdTokenResult())?.token;
-      if (token) {
-        window.localStorage.setItem("token", token);
-      }
-      setUser(user);
-    });
+    onAuthStateChanged(auth, (user) => setUser(user));
   }, []);
 
   const register = ({ email, password }: { email: string; password: string }) =>
@@ -56,11 +50,6 @@ const AuthProvider = (props: any) => {
   const login = ({ email, password }: { email: string; password: string }) =>
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
       const user = userCredential.user;
-      setAlert({
-        message: `Loading`,
-        status: "loading",
-        showAlert: true,
-      });
       setUser(user);
       router.push("/");
       setAlert({
